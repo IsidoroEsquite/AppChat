@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.galileo.android.messenger">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="org.isidoro.app.messenger.AndroidChatApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        >
+        <activity
+            android:name="org.isidoro.app.messenger.login.ui.LoginActivity"
+            android:noHistory="true"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.isidoro.app.messenger.contactlist.ui.ContactListActivity"
+            android:label="@string/contact_list.title"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="org.isidoro.app.messenger.chat.ui.ChatActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName="org.isidoro.app.messenger.contactlist.ui.ContactListActivity"
+            >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.isidoro.app.messenger.contactlist.ui.ContactListActivity"/>
+        </activity>
+        <activity
+            android:name="org.isidoro.app.messenger.signup.ui.SignUpActivity"
+            android:parentActivityName="org.isidoro.app.messenger.login.ui.LoginActivity"
+            >
+            <meta-data android:name="android.support.PARENT_ACTIVITY" android:value="org.isidoro.app.messenger.login.ui.LoginActivity"/>
+        </activity>
+    </application>
+
+</manifest>
