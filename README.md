@@ -1,2 +1,1 @@
-# AppChat
-Aplicaion movil sobre un chat
+# android-messenger
